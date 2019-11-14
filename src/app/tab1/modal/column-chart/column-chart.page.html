@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar class="header-title-wrap" mode="md">
+    <ion-title class="header-title">막대 기본차트</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="medium" (click)="closeModal()">
+        <ion-icon name="close" style="width:26px; height: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-chart
+    [data]="chartData$ | async"
+  ></app-chart>
+</ion-content>
