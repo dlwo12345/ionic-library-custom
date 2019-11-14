@@ -1,0 +1,31 @@
+.terms_wrap {
+  background: #fcfcfc;
+}
+
+.terms_card {
+  padding: 24px 20px 28px;
+  margin: 16px 0;
+  background: #fff;
+  .terms_title {
+    font-size: 16px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+  .terms_info {
+    color: #6d6d6d;
+    overflow: scroll;
+    height: 160px;
+  }
+}
+.policy {
+  border: 1px solid #999;
+  th {
+    text-align: center;
+    border: 1px solid #999;
+  }
+  td {
+    text-align: left;
+    border: 1px solid #999;
+  }
+}
