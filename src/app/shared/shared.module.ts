@@ -8,6 +8,7 @@ import {LoadingService} from './services/loading.service';
 import {DeactivateGuardService} from './services/deactivate-guard.service';
 import {SharedPipe} from './pipes/shared.pipe';
 import {MaterialModule} from './modules/material/material.module';
+import {PrimengModule} from './modules/primeng/primeng.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MaterialModule} from './modules/material/material.module';
     ReactiveFormsModule,
     IonicModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    PrimengModule
   ],
   declarations: [SharedPipe],
   providers: [
@@ -36,7 +38,8 @@ import {MaterialModule} from './modules/material/material.module';
     IonicModule,
     HttpClientModule,
     SharedPipe,
-    MaterialModule
+    MaterialModule,
+    PrimengModule
   ]
 })
 export class SharedModule {}
