@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="header-title-wrap" mode="md">
+    <ion-title class="header-title">material 예시</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="medium" (click)="closeModal()">
+        <ion-icon name="close" style="width:26px; height: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1">Option 1</mat-option>
+      <mat-option value="2">Option 2</mat-option>
+      <mat-option value="3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+</ion-content>
+
+<button mat-raised-button color="primary" (click)="confirmDialog()">
+  Confirm
+</button>
+<br />
+Response is: {{ result }}
