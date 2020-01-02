@@ -26,6 +26,10 @@
 
 > npm install @amcharts/amcharts4 --save
 
+- ngxs 
+
+> npm install @ngxs/store --save
+
 
 
 

@@ -1,9 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+<app-tab3-view
+  [animals]="animals$ | async"
+  (addAnimal)="addAnimal($event)"
+></app-tab3-view>

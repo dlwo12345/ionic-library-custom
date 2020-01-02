@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ngxs
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of animals">동물이름은? : {{ item.name }}</div>
+  <button (click)="addAnimalEmit('고양이')">동물추가</button>
+</ion-content>
