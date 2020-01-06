@@ -1,17 +1,20 @@
-<h1
-  mat-dialog-title
-  cdkDrag
-  cdkDragRootElement=".cdk-overlay-pane"
-  cdkDragHandle
->
-  {{ title }}
-</h1>
+<div class="dialog-wrap">
+  <h1 class="dialog-title-wrap">
+    {{ title }}
+  </h1>
 
-<div mat-dialog-content>
-  <p>{{ message }}</p>
-</div>
+  <div class="dialog-content-wrap">
+    <p class="dialog-content" [innerHTML]="message"></p>
+  </div>
 
-<div mat-dialog-actions>
-  <button mat-button (click)="onDismiss()">취소</button>
-  <button mat-raised-button color="primary" (click)="onConfirm()">확인</button>
+  <div class="dialog-footer-wrap">
+    <button
+      class="dialog-btn dialog-btn-blue"
+      color="primary"
+      (click)="onConfirm()"
+    >
+      확인
+    </button>
+    <button class="dialog-btn" (click)="onDismiss()">취소</button>
+  </div>
 </div>

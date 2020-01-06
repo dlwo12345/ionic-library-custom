@@ -31,17 +31,26 @@ export class ExMaterialPage {
 
   confirmDialog(): void {
     const dialogData = {
-      title: '쏼라쏼라',
-      message: `Are you sure you want to do this?`
+      title: '알림',
+      message: `본문을 넣어주세요!<div class="test" style="color:red;">eeeee</div>`
     };
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      maxWidth: '400px',
       data: dialogData
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {
       this.result = dialogResult;
+
+      console.log('this.result', this.result);
+
+      if (this.result) {
+        // 확인 눌렀을때
+        alert('확인');
+      } else {
+        // 취소 눌렀을때
+        alert('취소');
+      }
     });
   }
 }
