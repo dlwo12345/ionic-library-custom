@@ -13,6 +13,8 @@
 @import '~@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
@@ -28,4 +30,16 @@
 ion-modal {
   --width: 100% !important;
   --height: 100% !important;
+}
+
+*,
+:root,
+:root[mode='ios'],
+:root[mode='md'] {
+  // --ion-font-family: 'Noto Sans KR', sans-serif !important;
+  // font-family: 'Noto Sans KR', sans-serif !important;
+  --ion-font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-style: normal;
+  font-stretch: normal;
 }

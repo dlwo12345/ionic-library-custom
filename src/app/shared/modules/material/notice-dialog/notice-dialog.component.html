@@ -1,0 +1,22 @@
+<div class="dialog-wrap" *ngIf="config">
+  <div class="dialog-content-wrap">
+    <p class="dialog-content" [innerHTML]="config?.message"></p>
+  </div>
+
+  <div class="dialog-footer-wrap">
+    <button
+      class="dialog-btn"
+      *ngIf="config?.cancel"
+      (click)="onClose(config?.callbackFnN)"
+    >
+      {{ config?.cancel }}
+    </button>
+    <button
+      class="dialog-btn dialog-btn-blue"
+      color="primary"
+      (click)="onClose(config?.callbackFnY)"
+    >
+      {{ config?.confirm }}
+    </button>
+  </div>
+</div>

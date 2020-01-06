@@ -4,7 +4,7 @@ import {BehaviorSubject} from 'rxjs';
 
 import * as moment from 'moment';
 import {MatDialog} from '@angular/material';
-import {ConfirmDialogComponent} from 'src/app/shared/modules/material/confirm-dialog/confirm-dialog.component';
+import {NoticeDialogService} from 'src/app/shared/modules/material/notice-dialog/services/notice-dialog.service';
 
 @Component({
   selector: 'app-ex-material',
@@ -20,7 +20,7 @@ export class ExMaterialPage {
   constructor(
     private navParams: NavParams,
     private modalC: ModalController,
-    public dialog: MatDialog
+    private dialogS: NoticeDialogService
   ) {
     // componentProps can also be accessed at construction time using NavParams
   }
@@ -30,26 +30,18 @@ export class ExMaterialPage {
   }
 
   confirmDialog(): void {
-    const dialogData = {
-      title: '알림',
-      message: `본문을 넣어주세요!<div class="test" style="color:red;">eeeee</div>`
-    };
-
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      data: dialogData
+    this.dialogS.confirm({
+      message: '등록중인 발전소가 있습니다. <br> 계속 등록하시겠습니까?',
+      callbackFnY: () => {
+        console.log('콜백 실행!');
+      }
     });
-
-    dialogRef.afterClosed().subscribe(dialogResult => {
-      this.result = dialogResult;
-
-      console.log('this.result', this.result);
-
-      if (this.result) {
-        // 확인 눌렀을때
-        alert('확인');
-      } else {
-        // 취소 눌렀을때
-        alert('취소');
+  }
+  alertDialog(): void {
+    this.dialogS.alert({
+      message: '발전량 데이터를 수집 중입니다.',
+      callbackFnY: () => {
+        console.log('콜백 실행!');
       }
     });
   }

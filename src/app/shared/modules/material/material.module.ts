@@ -29,10 +29,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
+import {NoticeDialogComponent} from './notice-dialog/notice-dialog.component';
+import {NoticeDialogService} from './notice-dialog/services/notice-dialog.service';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
+    CommonModule,
     MatInputModule,
     MatAutocompleteModule,
     MatCheckboxModule,
@@ -96,10 +99,10 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule,
-    ConfirmDialogComponent
+    MatPaginatorModule
   ],
-  declarations: [ConfirmDialogComponent],
-  entryComponents: [ConfirmDialogComponent]
+  providers: [NoticeDialogService],
+  declarations: [NoticeDialogComponent],
+  entryComponents: [NoticeDialogComponent]
 })
 export class MaterialModule {}
