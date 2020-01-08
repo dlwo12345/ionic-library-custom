@@ -1,8 +1,16 @@
 import {NgModule} from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatCheckboxModule} from '@angular/material';
+import {
+  MatCheckboxModule,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE
+} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
+import {
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+  MatMomentDateModule
+} from '@angular/material-moment-adapter';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
@@ -66,7 +74,9 @@ import {CommonModule} from '@angular/common';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
   exports: [
     MatInputModule,
@@ -99,9 +109,15 @@ import {CommonModule} from '@angular/common';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
-  providers: [NoticeDialogService],
+  providers: [
+    NoticeDialogService,
+    {provide: MAT_DATE_LOCALE, useValue: 'ko'},
+    {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}}
+  ],
   declarations: [NoticeDialogComponent],
   entryComponents: [NoticeDialogComponent]
 })

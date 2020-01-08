@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar class="header-title-wrap" mode="md">
+    <ion-title class="header-title">primeng 예제</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="medium" (click)="closeModal()">
+        <ion-icon name="close" style="width:26px; height: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ui-g-12 ui-md-4">
+    <h3>Month Picker</h3>
+    <p-calendar
+      [(ngModel)]="date12"
+      view="month"
+      dateFormat="mm/yy"
+      [yearNavigator]="true"
+      yearRange="2000:2030"
+      [readonlyInput]="true"
+      [locale]="calendarOptions"
+    ></p-calendar>
+  </div>
+</ion-content>

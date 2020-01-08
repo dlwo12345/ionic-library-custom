@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar class="header-title-wrap" mode="md">
+    <ion-title class="header-title">material 예시</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="medium" (click)="closeModal()">
+        <ion-icon name="close" style="width:26px; height: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <mat-form-field>
+    <input
+      matInput
+      [(ngModel)]="date"
+      [matDatepicker]="picker"
+      placeholder="Choose a date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker
+      (monthSelected)="chosenMonthHandler($event, picker)"
+      startView="year"
+      #picker
+    ></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+
+  {{ date | json }} -->
+
+  <mat-form-field style="display: none;">
+    <input
+      matInput
+      [matDatepicker]="dp"
+      placeholder="Month and Year"
+      [formControl]="date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker
+      #dp
+      startView="year"
+      (yearSelected)="chosenYearHandler($event)"
+      (monthSelected)="chosenMonthHandler($event, dp)"
+      panelClass="example-month-picker"
+    >
+    </mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="dp.open()">Open</button>
+</ion-content>
