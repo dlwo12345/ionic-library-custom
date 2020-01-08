@@ -18,13 +18,11 @@
       <mat-option value="3">Option 3</mat-option>
     </mat-select>
   </mat-form-field>
+  <ion-button (click)="confirmDialog()" color="primary"
+    >confirm dialog</ion-button
+  >
+  <ion-button (click)="alertDialog()" color="primary">alert dialog</ion-button>
 </ion-content>
 
-<button mat-raised-button color="primary" (click)="confirmDialog()">
-  Confirm
-</button>
-<button mat-raised-button color="primary" (click)="alertDialog()">
-  alertDialog
-</button>
 <br />
 Response is: {{ result }}

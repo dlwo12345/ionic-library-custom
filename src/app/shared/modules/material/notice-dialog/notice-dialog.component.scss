@@ -1,6 +1,6 @@
 .dialog-wrap {
-  min-width: 300px;
 }
+
 .dialog-title-wrap {
   width: 100%;
   margin: 0;
@@ -19,6 +19,8 @@
     line-height: 29px;
     color: #141414;
     letter-spacing: -1px;
+    max-height: 300px;
+    overflow: scroll;
   }
 }
 
@@ -30,8 +32,9 @@
 
   .dialog-btn {
     flex-grow: 1;
-    padding: 1px 56px;
+    padding: 1px 32px;
     text-align: center;
+    outline: none;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
@@ -40,6 +43,7 @@
     position: relative;
     letter-spacing: -1px;
     margin-right: 15px;
+    background: white;
     &:after {
       position: absolute;
       top: 50%;
