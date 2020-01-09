@@ -2,14 +2,11 @@
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
-$custom-typography: mat-typography-config(
-  $font-family: 'Roboto, Noto Sans KR',
-);
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core($custom-typography);
+@include mat-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -106,11 +103,22 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   --ion-color-light-tint: #f5f6f9;
 }
 
+body,
+:root,
+:root[mode='ios'],
+:root[mode='md'] {
+  // --ion-font-family: 'Noto Sans KR', sans-serif !important;
+  // font-family: 'Noto Sans KR', sans-serif !important;
+  --ion-font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-style: normal;
+  font-stretch: normal;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
