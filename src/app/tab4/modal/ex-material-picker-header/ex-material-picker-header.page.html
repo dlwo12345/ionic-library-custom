@@ -1,0 +1,51 @@
+<div class="example-header">
+  <!-- <button
+    mat-icon-button
+    class="example-double-arrow"
+    (click)="previousClicked('year')"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button mat-icon-button (click)="previousClicked('month')">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <span class="example-header-label">{{ periodLabel }}</span>
+  <button mat-icon-button (click)="nextClicked('month')">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-double-arrow"
+    (click)="nextClicked('year')"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button> -->
+  <button
+    [ngClass]="{
+      'mode-active': _calendar?.currentView === 'multi-year'
+    }"
+    (click)="changeViewMode('multi-year')"
+  >
+    년
+  </button>
+  <button
+    [ngClass]="{
+      'mode-active': _calendar?.currentView === 'year'
+    }"
+    (click)="changeViewMode('year')"
+  >
+    월
+  </button>
+  <button
+    [ngClass]="{
+      'mode-active': _calendar?.currentView === 'month'
+    }"
+    (click)="changeViewMode('month')"
+  >
+    일
+  </button>
+
+  현재상태: {{ _calendar?.currentView }}
+</div>

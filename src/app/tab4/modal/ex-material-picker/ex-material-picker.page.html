@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [formGroup]="form">
   <!-- <mat-form-field>
     <input
       matInput
@@ -28,22 +28,29 @@
 
   {{ date | json }} -->
 
-  <mat-form-field style="display: none;">
+  {{ getValue() }}
+  <mat-form-field>
     <input
       matInput
       [matDatepicker]="dp"
       placeholder="Month and Year"
-      [formControl]="date"
+      formControlName="date"
     />
     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
     <mat-datepicker
       #dp
-      startView="year"
-      (yearSelected)="chosenYearHandler($event)"
+      [startView]="startView"
+      (yearSelected)="chosenYearHandler($event, dp)"
       (monthSelected)="chosenMonthHandler($event, dp)"
       panelClass="example-month-picker"
+      [calendarHeaderComponent]="exMaterialPickerHeaderPage"
     >
     </mat-datepicker>
   </mat-form-field>
-  <button mat-raised-button (click)="dp.open()">Open</button>
+  <button mat-raised-button (click)="dpOpen('multi-year', dp)">
+    multi-year Open
+  </button>
+  <button mat-raised-button (click)="dpOpen('year', dp)">year Open</button>
+  <button mat-raised-button (click)="dpOpen('month', dp)">month Open</button>
+  <button mat-raised-button (click)="aclick()">click test</button>
 </ion-content>

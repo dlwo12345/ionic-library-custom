@@ -4,6 +4,7 @@ import {ExMaterialPage} from './ex-material/ex-material.page';
 import {ExPrimengPage} from './ex-primeng/ex-primeng.page';
 import {ExMaterialPickerPage} from './ex-material-picker/ex-material-picker.page';
 import {ExPrimengPickerPage} from './ex-primeng-picker/ex-primeng-picker.page';
+import { ExMaterialPickerHeaderPage } from './ex-material-picker-header/ex-material-picker-header.page';
 
 @NgModule({
   imports: [SharedModule],
@@ -11,19 +12,21 @@ import {ExPrimengPickerPage} from './ex-primeng-picker/ex-primeng-picker.page';
     ExMaterialPage,
     ExPrimengPage,
     ExMaterialPickerPage,
-    ExPrimengPickerPage
+    ExPrimengPickerPage,
   ],
   declarations: [
     ExMaterialPage,
     ExPrimengPage,
     ExMaterialPickerPage,
-    ExPrimengPickerPage
+    ExPrimengPickerPage,
+    ExMaterialPickerHeaderPage
   ],
   entryComponents: [
     ExMaterialPage,
     ExPrimengPage,
     ExMaterialPickerPage,
-    ExPrimengPickerPage
+    ExPrimengPickerPage,
+    ExMaterialPickerHeaderPage
   ]
 })
 export class ModalPageModule {}
