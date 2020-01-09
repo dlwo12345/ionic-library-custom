@@ -17,7 +17,10 @@ export class NoticeDialogService {
         callbackFnN: callbackFnN ? callbackFnN : null,
         confirm: confirm ? confirm : '확인',
         cancel: cancel ? cancel : '취소'
-      }
+      },
+      minWidth: '320px',
+      maxWidth: '400px',
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(fn => {
@@ -35,7 +38,10 @@ export class NoticeDialogService {
         message,
         callbackFnY: callbackFnY ? callbackFnY : null,
         confirm: confirm ? confirm : '확인'
-      }
+      },
+      minWidth: '320px',
+      maxWidth: '400px',
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(fn => {
