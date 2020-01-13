@@ -31,6 +31,7 @@ export class ChartComponent implements OnDestroy, OnChanges {
     height: '250px'
   };
   @Input() chartClose: any;
+  @Input() chartMode: any = 'XYChart';
 
   private chart: any = null;
   private chartUuid: string = null;
@@ -69,7 +70,7 @@ export class ChartComponent implements OnDestroy, OnChanges {
     this.chart = am4core.createFromConfig(
       data,
       this.chartUuid,
-      am4charts.XYChart
+      am4charts[this.chartMode]
     );
   }
 

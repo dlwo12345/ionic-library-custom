@@ -5,6 +5,7 @@ import {HeatMapCalendarPage} from './heatmap-calendar/heatmap-calendar.page';
 import {ColumnChartPage} from './column-chart/column-chart.page';
 import {StackedColumnChartPage} from './stacked-column-chart/stacked-column-chart.page';
 import {StackedBarPercentChartPage} from './stacked-bar-percent-chart/stacked-bar-percent-chart.page';
+import {PieChartPage} from './pie-chart/pie-chart.page';
 
 @NgModule({
   imports: [SharedModule, ChartModule],
@@ -12,19 +13,22 @@ import {StackedBarPercentChartPage} from './stacked-bar-percent-chart/stacked-ba
     HeatMapCalendarPage,
     ColumnChartPage,
     StackedColumnChartPage,
-    StackedBarPercentChartPage
+    StackedBarPercentChartPage,
+    PieChartPage
   ],
   declarations: [
     HeatMapCalendarPage,
     ColumnChartPage,
     StackedColumnChartPage,
-    StackedBarPercentChartPage
+    StackedBarPercentChartPage,
+    PieChartPage
   ],
   entryComponents: [
     HeatMapCalendarPage,
     ColumnChartPage,
     StackedColumnChartPage,
-    StackedBarPercentChartPage
+    StackedBarPercentChartPage,
+    PieChartPage
   ]
 })
 export class ModalPageModule {}

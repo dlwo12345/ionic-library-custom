@@ -4,6 +4,7 @@ import {HeatMapCalendarPage} from './modal/heatmap-calendar/heatmap-calendar.pag
 import {ColumnChartPage} from './modal/column-chart/column-chart.page';
 import {StackedColumnChartPage} from './modal/stacked-column-chart/stacked-column-chart.page';
 import {StackedBarPercentChartPage} from './modal/stacked-bar-percent-chart/stacked-bar-percent-chart.page';
+import {PieChartPage} from './modal/pie-chart/pie-chart.page';
 
 @Component({
   selector: 'app-tab1',
@@ -76,6 +77,24 @@ export class Tab1Page {
   async showStackedBarPercentChartModal() {
     this.modal = await this.modalC.create({
       component: StackedBarPercentChartPage,
+      componentProps: null
+    });
+
+    this.modal.onDidDismiss().then(dataReturned => {
+      if (dataReturned !== null) {
+        // this.dataReturned = dataReturned.data;
+        // alert('Modal Sent Data :'+ dataReturned);
+      }
+    });
+
+    return await this.modal.present();
+  }
+  /**
+   * pie 차트 예제 출력
+   */
+  async showPieChartModal() {
+    this.modal = await this.modalC.create({
+      component: PieChartPage,
       componentProps: null
     });
 

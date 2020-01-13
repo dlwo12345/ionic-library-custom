@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar class="header-title-wrap" mode="md">
+    <ion-title class="header-title">pie 차트</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" color="medium" (click)="closeModal()">
+        <ion-icon name="close" style="width:26px; height: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-chart
+    [style]="{height: '500px'}"
+    [data]="chartData$ | async"
+    [chartMode]="'PieChart'"
+  ></app-chart>
+</ion-content>
