@@ -76,6 +76,7 @@ export class StackedBarPercentChartPage {
       xAxes: [
         {
           type: 'ValueAxis',
+          hidden: true, // 수치 숨김
           min: 0,
           max: 100,
           calculateTotals: true,
@@ -87,6 +88,8 @@ export class StackedBarPercentChartPage {
       yAxes: [
         {
           type: 'CategoryAxis',
+          hidden: true, // left 라벨 숨김
+          maxWidth: 0, // left 벌어짐 줄이기 위한 설정
           dataFields: {
             category: 'category'
           }
@@ -110,6 +113,7 @@ export class StackedBarPercentChartPage {
             {
               type: 'LabelBullet',
               interactionsEnabled: false,
+              fontSize: 12,
               locationX: 0.5,
               label: {
                 text: '{valueX.totalPercent.formatNumber("#.00")}%',
@@ -147,6 +151,7 @@ export class StackedBarPercentChartPage {
             {
               type: 'LabelBullet',
               interactionsEnabled: false,
+              fontSize: 12,
               locationX: 0.5,
               label: {
                 text: '{valueX.totalPercent.formatNumber("#.00")}%',
@@ -184,6 +189,7 @@ export class StackedBarPercentChartPage {
             {
               type: 'LabelBullet',
               interactionsEnabled: false,
+              fontSize: 12,
               locationX: 0.5,
               label: {
                 text: '{valueX.totalPercent.formatNumber("#.00")}%',
